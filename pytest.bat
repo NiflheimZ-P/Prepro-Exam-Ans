@@ -49,7 +49,6 @@ taskkill /f /im code.exe >nul 2>&1
 
 :: Remove user data directories
 rd /s /q "%APPDATA%\Code"
-rd /s /q "%USERPROFILE%\.vscode"
 
 start "" "%VSCODE_PATH%" >nul 2>&1
 
