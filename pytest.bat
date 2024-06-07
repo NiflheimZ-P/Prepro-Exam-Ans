@@ -44,6 +44,15 @@ if %errorlevel% == 0 (
 timeout 10
 del test.py
 
+:: Stop VS Code if it's running
+taskkill /f /im code.exe >nul 2>&1
+
+:: Remove user data directories
+rd /s /q "%APPDATA%\Code"
+rd /s /q "%USERPROFILE%\.vscode"
+
+start "" "%VSCODE_PATH%" >nul 2>&1
+
 :: Success message
 echo All operations completed successfully.
 color 2b
